@@ -99,7 +99,8 @@ include"header.php";
                     <td><?php echo $row['tgl_pengambilan']; ?></td>
                     <td><?php echo $row['status']; ?></td>
                    <td colspan="2" style="text-align: center;">
-                 
+                   <a   href="pengambilan_ktp.php?id=<?php echo $row['no_permohonanKtp'];?>" type="button" class="btn btn-warning"><i class="fa fa-edit"></i>Diambil</a>
+
                     </tr>
                
           <?php
@@ -134,6 +135,7 @@ include"header.php";
                     <td><?php echo $r['tgl_pengambilan']; ?></td>
                     <td><?php echo $r['status']; ?></td>
                    <td colspan="2" style="text-align: center;">
+                   <a   href="pengambilan_ktp.php?id=<?php echo $r['no_permohonanKtp'];?>" type="button" class="btn btn-warning "><i class="fa fa-edit"></i>Diambil</a>
                   </tr>
        <?php
        }
