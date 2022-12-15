@@ -25,7 +25,7 @@ if(@$_POST['login']){
 		
 
 	} else if($level=='Bagian Pelayanan'){
-		$sql="SELECT * FROM tb_user WHERE userID='$user' and password='$pass'";
+		$sql="SELECT * FROM tb_staff WHERE nip='$user' and password='$pass' and jabatan='Bagian Pelayanan'";
 		$query=mysqli_query($koneksi,$sql);
 		if(mysqli_num_rows($query)>0){
 			$row=mysqli_fetch_array($query);
@@ -44,7 +44,7 @@ if(@$_POST['login']){
 	}
 
 	}else if($level=='Kasi Pelayanan'){
-		$sql="SELECT * FROM tb_user WHERE userID='$user' and password='$pass'";
+		$sql="SELECT * FROM tb_staff WHERE nip='$user' and password='$pass' and jabatan='Kasi Pelayanan'";
 		$query=mysqli_query($koneksi,$sql);
 		if(mysqli_num_rows($query)>0){
 			$row=mysqli_fetch_array($query);

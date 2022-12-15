@@ -95,6 +95,7 @@ include"header.php";
                  
                    
                    <td colspan="2" style="text-align: center;">
+                   <a   href="edit_sktmkesehatan.php?id=<?php echo $row['no_sktmkesehatan'];?>" type="button" class="btn btn-info"><i class="fa fa-edit"></i>Edit</a>
                    <a onclick="return confirm('Anda Yakin akan menghapus data?')" href="hapus_sktmkesehatan.php?id=<?php echo $row['no_sktmkesehatan'];?>" type="button" class="btn btn-danger btn"><i class="fa fa-trash-o"></i>Hapus</a>
                     </td>
                     </tr>
@@ -128,6 +129,7 @@ include"header.php";
                  
                    
                    <td colspan="2" style="text-align: center;">
+                   <a   href="edit_sktmkesehatan.php?id=<?php echo $row['no_sktmkesehatan'];?>" type="button" class="btn btn-info"><i class="fa fa-edit"></i>Edit</a>
                    <a onclick="return confirm('Anda Yakin akan menghapus data?')" href="hapus_sktmkesehatan.php?id=<?php echo $row['no_sktmkesehatan'];?>" type="button" class="btn btn-danger btn"><i class="fa fa-trash-o"></i>Hapus</a>
                     </td>
                     </tr>

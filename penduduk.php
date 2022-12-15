@@ -92,7 +92,9 @@ include"header.php";
                   <?php echo"<td><img src='assets/foto/penduduk/".$row['foto']."' width='50' height='50'></td>";?>
   
                    <td colspan="2" style="text-align: center;">
-                   
+                   <a   href="edit_penduduk.php?id=<?php echo $row['id_penduduk'];?>" type="button" class="btn btn-info btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                     <a   href="detail_penduduk.php?id=<?php echo $row['id_penduduk'];?>" type="button" class="btn btn-warning btn-xs">Detail</a>
+                      
                     <a onclick="return confirm('Anda Yakin akan menghapus data?')" href="hapus_penduduk.php?id=<?php echo $row['id_penduduk'];?>" type="button" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>Hapus</a>
                     </td>
                 </tr>
@@ -125,7 +127,9 @@ include"header.php";
                    <?php echo"<td><img src='assets/foto/penduduk/".$r['foto']."' width='50' height='50'></td>";?>
   
                    <td colspan="2" style="text-align: center;">
-                  
+                   <a   href="edit_penduduk.php?id=<?php echo $r['id_penduduk'];?>" type="button" class="btn btn-info btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                     <a   href="detail_penduduk.php?id=<?php echo $r['id_penduduk'];?>" type="button" class="btn btn-warning btn-xs">Detail</a>
+                      
                     <a onclick="return confirm('Anda Yakin akan menghapus data?')" href="hapus_penduduk.php?id=<?php echo $r['id_penduduk'];?>" type="button" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>Hapus</a>
                     </td>
                 </tr>
