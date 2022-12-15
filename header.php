@@ -73,6 +73,8 @@ require_once('koneksi.php');
                 <li><a href="tampil_sktmKesehatan.php">SKTM Kesehatan</a></li>
                 <li><a href="tampil_sktmPendidikan.php">SKTM Pendidikan</a></li>
                 <li><a href="tampil_suratpindah.php">Surat Pindah</a></li>
+                <li><a href="formPengaduan.php">Form Pengaduan</a></li>     
+          <li><a href="ikm.php">Instalasi Kepuasan Masyarakat</a></li> 
               </ul>          
             </li>
               
@@ -136,6 +138,8 @@ require_once('koneksi.php');
                 <li><a href="tampil_sktmKesehatan.php">SKTM Kesehatan</a></li>
                 <li><a href="tampil_sktmPendidikan.php">SKTM Pendidikan</a></li>
                 <li><a href="tampil_suratpindah.php">Surat Pindah</a></li>
+                <li><a href="formPengaduan.php">Form Pengaduan</a></li>     
+          <li><a href="ikm.php">Instalasi Kepuasan Masyarakat</a></li> 
               </ul>          
             </li>
               
