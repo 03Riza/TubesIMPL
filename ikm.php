@@ -54,7 +54,7 @@ include"header.php";
 <?php
   include 'koneksiIKM.php';
   
-  $tampil = mysqli_query($koneksi, "SELECT * FROM db_ikm");
+  $tampil = mysqli_query($koneksi, "SELECT * FROM ikm");
   $data = mysqli_fetch_array($tampil);
 ?>
 
