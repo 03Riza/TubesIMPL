@@ -1,3 +1,3 @@
 <?php
-	$koneksi = new mysqli('localhost', 'root', '', 'db_ikm');
+	$koneksi = new mysqli('localhost', 'root', '', 'ikm');
 ?>
