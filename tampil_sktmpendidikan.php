@@ -96,6 +96,7 @@ include"header.php";
                   <td><?php echo $row['keterangan']; ?></td>
                   
                    <td colspan="2" style="text-align: center;">
+                   <a   href="edit_sktmpendidikan.php?id=<?php echo $row['no_sktmPendidikan'];?>" type="button" class="btn btn-info"><i class="fa fa-edit"></i>Edit</a>
                   <a onclick="return confirm('Anda Yakin akan menghapus data?')" href="hapus_sktmpendidikan.php?id=<?php echo $row['no_sktmPendidikan'];?>" type="button" class="btn btn-danger btn"><i class="fa fa-trash-o"></i>Hapus</a>
                     </td>
                     </tr>
@@ -129,6 +130,7 @@ include"header.php";
                   <td><?php echo $r['sekolah_tujuan']; ?></td>
                   <td><?php echo $r['keterangan']; ?></td>
                     <td colspan="2" style="text-align: center;">
+                    <a   href="edit_sktmpendidikan.php?id=<?php echo $r['no_sktmPendidikan'];?>" type="button" class="btn btn-info"><i class="fa fa-edit"></i>Edit</a>
                    <a onclick="return confirm('Anda Yakin akan menghapus data?')" href="hapus_sktmpendidikan.php?id=<?php echo $r['no_sktmPendidikan'];?>" type="button" class="btn btn-danger btn"><i class="fa fa-trash-o"></i>Hapus</a>
                     </td>
                     </tr>

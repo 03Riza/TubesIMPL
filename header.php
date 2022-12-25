@@ -68,12 +68,18 @@ require_once('koneksi.php');
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks"></span> Pelayanan Administrasi<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="tampil_ektp.php">Permohonan KTP</a></li>
+                <li><a href="tampil_KIA.php">Permohonan KIA</a></li>
                 <li><a href="tampil_kk.php">Permohonan KK</a></li>
                 <li><a href="tampil_sktmKesehatan.php">SKTM Kesehatan</a></li>
                 <li><a href="tampil_sktmPendidikan.php">SKTM Pendidikan</a></li>
+                <li><a href="tampil_suratpindah.php">Surat Pindah</a></li>
+                <li><a href="formPengaduan.php">Form Pengaduan</a></li>     
+          <li><a href="ikm.php">Instalasi Kepuasan Masyarakat</a></li> 
               </ul>          
             </li>
-              <li><a href="ikm.php">Instalasi Kepuasan Masyarakat</a></li> 
+              
+                    
+          
           </ul>
            </ul>
 
@@ -90,7 +96,6 @@ require_once('koneksi.php');
         </div><!-- /.navbar-collapse -->
       </nav>
       <?php
-
     }else if($_SESSION['level']=="Bagian Pelayanan"){
       ?>
       <div id="wrapper">
@@ -128,14 +133,17 @@ require_once('koneksi.php');
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks"></span> Pelayanan Administrasi<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="tampil_ektp.php">Permohonan KTP</a></li>
+                <li><a href="tampil_KIA.php">Permohonan KIA</a></li>
                 <li><a href="tampil_kk.php">Permohonan KK</a></li>
                 <li><a href="tampil_sktmKesehatan.php">SKTM Kesehatan</a></li>
                 <li><a href="tampil_sktmPendidikan.php">SKTM Pendidikan</a></li>
+                <li><a href="tampil_suratpindah.php">Surat Pindah</a></li>
+                <li><a href="formPengaduan.php">Form Pengaduan</a></li>     
+          <li><a href="ikm.php">Instalasi Kepuasan Masyarakat</a></li> 
               </ul>          
             </li>
               
-          <li><a href="formPengaduan.php">Form Pengaduan</a></li>     
-          <li><a href="ikm.php">Instalasi Kepuasan Masyarakat</a></li> 
+                    
          
           </ul>
            </ul>
@@ -153,7 +161,6 @@ require_once('koneksi.php');
         </div><!-- /.navbar-collapse -->
       </nav>
      <?php
-
     }else if($_SESSION['level']=="Kasi Pelayanan"){
       ?>
       <div id="wrapper">
