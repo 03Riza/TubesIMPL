@@ -25,9 +25,6 @@ require_once('koneksi.php');
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/highcharts.js"></script>
    <script src="assets/js/highcharts-3d.js"></script>
-
-   
-   
   </head>
 <body>
   
@@ -76,8 +73,6 @@ include"header.php";
   </div>
 </div>
 
-
-
 <div class="container">
         <div class="row row-table">
           <div class="col-sm-3 col-table">
@@ -118,12 +113,17 @@ include"header.php";
   </div>
 </div>
 
-<div id="page-wrapper">
-  <div class="row" id="contentInput" >
-    <div class="col-lg-12">
-      <h1>Statistik Penduduk</small></h1>
-
-
+     <div id="page-wrapper">
+      <div class="row" id="contentInput" >
+        <div class="col-lg-12">
+          <h1>Statistik Penduduk</small></h1>
+         </div>
+       </div>
+      </div>
+      <div class="panel-footer">
+           <a href="statistikPen.php" class="btn" style="align:center; background-color:#00BFFF;" >Lihat Statistik Penduduk</a>
+      </div>         
+          
         <?php
     }else if($_SESSION['level']=="Bagian Pelayanan"){
       ?>
@@ -160,8 +160,6 @@ include"header.php";
   </div>
 </div>
 
-
-
 <div class="container">
         <div class="row row-table">
           <div class="col-sm-3 col-table">
@@ -206,10 +204,14 @@ include"header.php";
       <div class="row" id="contentInput" >
         <div class="col-lg-12">
           <h1>Statistik Penduduk</small></h1>
+         </div>
+       </div>
+      </div>
+      <div class="panel-footer">
+           <a href="statistikPen.php" class="btn" style="align:center; background-color:#00BFFF;" >Lihat Statistik Penduduk</a>
+      </div>
 
 <?php
-  
-
     }else if($_SESSION['level']=="Kasi Pelayanan"){
       ?>
 
@@ -246,8 +248,6 @@ include"header.php";
   </div>
 </div>
 
-
-
 <div class="container">
         <div class="row row-table">
           <div class="col-sm-3 col-table">
@@ -292,6 +292,12 @@ include"header.php";
       <div class="row" id="contentInput" >
         <div class="col-lg-12">
           <h1>Statistik Penduduk</small></h1>
+         </div>
+       </div>
+      </div>
+      <div class="panel-footer">
+           <a href="statistikPen.php" class="btn" style="align:center; background-color:#00BFFF;" >Lihat Statistik Penduduk</a>
+      </div>
 
          </div>
        </div>
