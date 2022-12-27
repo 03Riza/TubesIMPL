@@ -29,10 +29,10 @@ include"header.php";
 <div id="page-wrapper">
 <div class="row" id="contentInput" >
           <div class="col-lg-12">
-            <h1>Buat Permohonan KIA</h1>
+            <h1>Buat Surat Keterangan Pindah</h1>
             <ol class="breadcrumb">
               <li class="active">Pelayanan</li>
-              <li class="active"> Buat Permohonan KIA</li>
+              <li class="active"> Buat Surat Pindah</li>
             </ol>
           </div>
       </div>
@@ -56,17 +56,16 @@ include"header.php";
 </div>
 </form>
  </div>
-
  <div class="row" id="contentJurusan">
                     <div class="col-lg-12">
                   <?php
-                    $q="SELECT max(no_permohonanKia) as maxKode from tb_permohonankia";   
+                    $q="SELECT max(no_ket) as maxKode from tb_ketpindah";   
                     $ha=mysqli_query($koneksi,$q);
                      $data=mysqli_fetch_array($ha);
 
                     $kode=$data['maxKode'];
                     $noUrut=(int)substr($kode,1,5);
-                    $char="P";
+                    $char="R";
                     $noUrut++;
 
                    
@@ -84,9 +83,9 @@ include"header.php";
                 while($r=mysqli_fetch_array($da)){
                     
         ?>
-       <form  action="simpan_kia.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
+         <form  action="simpan_suratpindah.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
                   <div class="form-group form-group-sm">
-                    <label class=" control-label col-sm-3" for="txtno" control-label">No Permohonan KIA</label>
+                    <label class=" control-label col-sm-3" for="txtno" control-label">No Surat Pindah</label>
                     <div class="col-sm-3">
                     <input type="text" class="form-control" name="txtno" id="txtno" value="<?php echo $kode; ?>" readonly>
                 </div>
@@ -98,12 +97,13 @@ include"header.php";
                 </div>
               </div>
               <div class="form-group form-group-sm">
-                    <label class=" control-label col-sm-3" for="txtnama" control-label">Nama Penduduk</label>
+                    <label class=" control-label col-sm-3" for="txtnama" control-label">Nama Pemohon</label>
                     <div class="col-sm-4">
                     <input type="text" class="form-control" name="txtnama" id="txtnama" readonly value="<?php echo $r['nama']; ?>">
                 </div>
               </div>
               <div class="form-group form-group-sm">
+                    
                     <label class=" control-label col-sm-3" for="txt_ttl" control-label">Tempat, Tanggal Lahir</label>
                     <div class="col-sm-4">
                     <input type="text" class="form-control" name="txt_ttl" id="txt_ttl" readonly value="<?php echo $r['tempatLahir'].",". $r['tanggalLahir'] ; ?>">
@@ -116,30 +116,25 @@ include"header.php";
                     <textarea class="form-control" name="txtalamat" cols="40" rows="5" id="txtalamat" readonly ><?php echo $r['alamat']." RT.". $r['rt']." RW.".$r['rw']." Kelurahan ".$r['kelurahan']." Kecamatan Lengkong Kota Bandung" ; ?></textarea>
                 </div>
               </div>
-               <div class="form-group form-group-sm">
-                  <label class=" control-label col-sm-3" for="cbjenis">Jenis Permohonan</label>
-                   <div class="col-sm-3">
-                    <select name="cbjenis" class="form-control" id="cbjenis"required>
-                    <option value="">--Pilih--</option>
-                    <option value="Permohonan Baru">Baru</option>
-                    <option value="Pindah Datang">Pindah Datang</option>
-                    <option value="Cetak Ulang">Cetak Ulang</option>
-                    </select >
-                  </div>
-                 </div> 
-
               <div class="form-group form-group-sm">
-                    <label class=" control-label col-sm-3" for="txt_tglpenyerahan" control-label">Tanggal Penyerahan Berkas</label>
-                    <div class="col-sm-3">
-                    <input type="date" class="form-control" name="txt_tglpenyerahan" id="txt_tglpenyerahan" placeholder="yyyy-mm-dd" required>
+                    <label class=" control-label col-sm-3" for="txtnokk" control-label">Nomor Kartu Keluarga</label>
+                    <div class="col-sm-4">
+                    <input type="text" class="form-control" name="txtnokk" id="txtnokk" required>
                 </div>
               </div>
               <div class="form-group form-group-sm">
-                    <label class=" control-label col-sm-3" for="txt_tglrekam" control-label">Tanggal Rekam</label>
-                    <div class="col-sm-3">
-                    <input type="date" class="form-control" name="txt_tglrekam" id="txt_tglrekam" placeholder="yyyy-mm-dd" required>
+                    <label class="control-label col-sm-3">Keterangan Pindah</label>
+                    <div class="col-sm-4">
+                    <textarea class="form-control" name="txtpindah" cols="40" rows="5" id="txtpindah"></textarea>
                 </div>
               </div>
+              <div class="form-group form-group-sm">
+                    <label class=" control-label col-sm-3" for="txt_tglpenyerahan" control-label">Tanggal Permohonan</label>
+                    <div class="col-sm-3">
+                    <input type="date" class="form-control" name="txt_tglpermohonan" id="txt_tglpermohonan" placeholder="yyyy-mm-dd" required>
+                </div>
+              </div>
+              
                <div class="form-group form-group=sm">
                     <center><button type="reset" align="right" class="btn btn-danger">Reset</button>
                     <input type="submit" align="right" class="btn btn-success"  value="Simpan" name="simpan"></center>
@@ -150,13 +145,11 @@ include"header.php";
 }else
     {
      echo"<script>alert('Maaf data penduduk tidak ditemukan!')</script>";
-     echo"<a href='tambah_penduduk.php'><h4>Silahkan Daftarkan Data Penduduk</h4></a>";
+     echo"<a href='tambah_suratpindah.php'><h4>Silahkan Daftarkan Data Penduduk</h4></a>";
 
   }
 } 
 if(!ISSET($_POST['cari'])){
+}
   ?>
   
-<?php
-}
-?>
