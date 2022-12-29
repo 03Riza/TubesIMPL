@@ -59,7 +59,7 @@ include"header.php";
  <div class="row" id="contentJurusan">
                     <div class="col-lg-12">
                   <?php
-                    $q="SELECT max(no_sktmkesehatan) as maxKode from tb_sktmkesehatan";   
+                    $q="SELECT max(no_ket) as maxKode from tb_ketpindah";   
                     $ha=mysqli_query($koneksi,$q);
                      $data=mysqli_fetch_array($ha);
 
@@ -83,7 +83,7 @@ include"header.php";
                 while($r=mysqli_fetch_array($da)){
                     
         ?>
-         <form  action="simpan_sktmkesehatan.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
+         <form  action="simpan_suratpindah.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
                   <div class="form-group form-group-sm">
                     <label class=" control-label col-sm-3" for="txtno" control-label">No Surat Pindah</label>
                     <div class="col-sm-3">
@@ -125,7 +125,7 @@ include"header.php";
               <div class="form-group form-group-sm">
                     <label class="control-label col-sm-3">Keterangan Pindah</label>
                     <div class="col-sm-4">
-                    <textarea class="form-control" name="txtalamat" cols="40" rows="5" id="txtpindah"></textarea>
+                    <textarea class="form-control" name="txtpindah" cols="40" rows="5" id="txtpindah"></textarea>
                 </div>
               </div>
               <div class="form-group form-group-sm">
@@ -145,7 +145,7 @@ include"header.php";
 }else
     {
      echo"<script>alert('Maaf data penduduk tidak ditemukan!')</script>";
-     echo"<a href='tambah_penduduk.php'><h4>Silahkan Daftarkan Data Penduduk</h4></a>";
+     echo"<a href='tambah_suratpindah.php'><h4>Silahkan Daftarkan Data Penduduk</h4></a>";
 
   }
 } 

@@ -36,6 +36,8 @@
                     <select name="level" class="form-control" id="level"required>
                     <option value="">Level</option>
                     <option value="admin">Administrator</option>
+                    <option value="Bagian Pelayanan">Bag.Pelayanan</option>
+                    <option value="Kasi Pelayanan">Kasi.Pelayanan</option>
                     </select>
                 </div>
                
