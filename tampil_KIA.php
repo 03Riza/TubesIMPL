@@ -39,7 +39,7 @@ include"header.php";
           <div class="panel-heading-none">
           </div>
           <div class="panel-body">
-          <form method="POST" action="" id="cariEKTP">
+          <form method="POST" action="" id="cariKIA">
           <div class="form-group form-group-sm">
                  
                 <div class="form-group form-group-sm">
@@ -78,7 +78,7 @@ include"header.php";
  <?php
      if(!ISSET($_POST['cari'])){
         $no= 1;
-       $query="SELECT * FROM tb_permohonanKtp as p JOIN tb_penduduk as d ON p.nik=d.nik";
+       $query="SELECT * FROM tb_permohonankia as p JOIN tb_penduduk as d ON p.nik=d.nik";
         $data=mysqli_query($koneksi,$query);
         if(mysqli_num_rows($data) > 0){
 
@@ -86,7 +86,7 @@ include"header.php";
       ?>
                 <tr>
                   <td align="center"><?php echo $no++; ?></td>
-                  <td><?php echo $row['no_permohonanKtp']; ?></td>
+                  <td><?php echo $row['no_permohonanKia']; ?></td>
                   <td><?php echo $row['nik']; ?></td>
                   <td><?php echo $row['nama']; ?></td>
                   <td><?php echo $row['tempatLahir'].", ".$row['tanggalLahir']; ?></td>
@@ -99,7 +99,7 @@ include"header.php";
                     <td><?php echo $row['tgl_pengambilan']; ?></td>
                     <td><?php echo $row['status']; ?></td>
                    <td colspan="2" style="text-align: center;">
-                   <a   href="pengambilan_ktp.php?id=<?php echo $row['no_permohonanKtp'];?>" type="button" class="btn btn-warning"><i class="fa fa-edit"></i>Diambil</a>
+                   <a   href="pengambilan_kia.php?id=<?php echo $row['no_permohonanKia'];?>" type="button" class="btn btn-warning"><i class="fa fa-edit"></i>Diambil</a>
 
                     </tr>
                
@@ -113,7 +113,7 @@ include"header.php";
        if(ISSET($_POST['cari'])){
          $no= 1;
         $cari=mysqli_real_escape_string($koneksi,$_POST['txtcari']);
-        $perintah="SELECT * FROM tb_permohonanKtp as k JOIN tb_penduduk as d ON k.nik=d.nik WHERE no_permohonanKtp LIKE '%$cari%' OR nama LIKE '%$cari%'  OR k.nik LIKE '%$cari%' "   ;
+        $perintah="SELECT * FROM tb_permohonankia as k JOIN tb_penduduk as d ON k.nik=d.nik WHERE no_permohonanKia LIKE '%$cari%' OR nama LIKE '%$cari%'  OR k.nik LIKE '%$cari%' "   ;
          $da=mysqli_query($koneksi,$perintah)or die (mysqli_error($koneksi));;
         
           if(mysqli_num_rows($da) > 0){
@@ -122,7 +122,7 @@ include"header.php";
         
          <tr>
                   <td align="center"><?php echo $no++; ?></td>
-                  <td><?php echo $r['no_permohonanKtp']; ?></td>
+                  <td><?php echo $r['no_permohonanKia']; ?></td>
                   <td><?php echo $r['nik']; ?></td>
                   <td><?php echo $r['nama']; ?></td>
                   <td><?php echo $r['tempatLahir'].", ".$r['tanggalLahir']; ?></td>
@@ -135,7 +135,7 @@ include"header.php";
                     <td><?php echo $r['tgl_pengambilan']; ?></td>
                     <td><?php echo $r['status']; ?></td>
                    <td colspan="2" style="text-align: center;">
-                   <a   href="pengambilan_ktp.php?id=<?php echo $r['no_permohonanKtp'];?>" type="button" class="btn btn-warning "><i class="fa fa-edit"></i>Diambil</a>
+                   <a   href="pengambilan_kia.php?id=<?php echo $r['no_permohonanKia'];?>" type="button" class="btn btn-warning "><i class="fa fa-edit"></i>Diambil</a>
                   </tr>
        <?php
        }
@@ -148,7 +148,7 @@ include"header.php";
   }else{
     
      echo"<script>alert('Maaf data tidak ditemukan!')</script>";
-     echo"<script>location='tampil_Ektp.php';</script>";
+     echo"<script>location='tampil_KIA.php';</script>";
    }
   }
 

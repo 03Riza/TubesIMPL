@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2019 at 05:23 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Waktu pembuatan: 28 Des 2022 pada 11.16
+-- Versi server: 10.4.25-MariaDB
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_penduduk`
+-- Struktur dari tabel `tb_ketpindah`
+--
+
+CREATE TABLE `tb_ketpindah` (
+  `no_ket` varchar(16) NOT NULL,
+  `nik` varchar(16) NOT NULL,
+  `nomor_kk` varchar(16) NOT NULL,
+  `ket` text NOT NULL,
+  `tgl` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_ketpindah`
+--
+
+INSERT INTO `tb_ketpindah` (`no_ket`, `nik`, `nomor_kk`, `ket`, `tgl`) VALUES
+('R00002', '3209', 'K00003', 'asas', '2022-12-27');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_penduduk`
 --
 
 CREATE TABLE `tb_penduduk` (
@@ -49,7 +69,7 @@ CREATE TABLE `tb_penduduk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_penduduk`
+-- Dumping data untuk tabel `tb_penduduk`
 --
 
 INSERT INTO `tb_penduduk` (`id_penduduk`, `nik`, `nama`, `tempatLahir`, `tanggalLahir`, `jenisKelamin`, `alamat`, `rt`, `rw`, `kelurahan`, `agama`, `pendidikan`, `statusPerkawinan`, `pekerjaan`, `golDarah`, `nomorTlp`, `foto`) VALUES
@@ -61,7 +81,7 @@ INSERT INTO `tb_penduduk` (`id_penduduk`, `nik`, `nama`, `tempatLahir`, `tanggal
 (13, '327878', 'Umar Bakri', 'Jakarta', '1959-09-08', 'Laki-Laki', 'Jl.Madian No.101', '6', '5', 'Cikawao', 'Khonghucu', 'Strata II', 'Cerai Mati', 'PNS', 'O', '0892382839392', 'pendudukEdit-327878.jpeg');
 
 --
--- Triggers `tb_penduduk`
+-- Trigger `tb_penduduk`
 --
 DELIMITER $$
 CREATE TRIGGER `trigger_saathapus` AFTER DELETE ON `tb_penduduk` FOR EACH ROW BEGIN
@@ -76,7 +96,31 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_permohonankk`
+-- Struktur dari tabel `tb_permohonankia`
+--
+
+CREATE TABLE `tb_permohonankia` (
+  `no_permohonanKia` varchar(10) NOT NULL,
+  `nik` varchar(16) NOT NULL,
+  `jenisPermohonan` varchar(30) NOT NULL,
+  `tgl_penyerahanBerkas` date NOT NULL,
+  `tglRekam` date NOT NULL,
+  `tgl_pengambilan` date NOT NULL,
+  `status` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_permohonankia`
+--
+
+INSERT INTO `tb_permohonankia` (`no_permohonanKia`, `nik`, `jenisPermohonan`, `tgl_penyerahanBerkas`, `tglRekam`, `tgl_pengambilan`, `status`) VALUES
+('P00001', '311', 'Permohonan Baru', '2022-12-27', '2022-12-27', '0000-00-00', 'Belum Diambil'),
+('P00002', '3211', 'Permohonan Baru', '2022-12-27', '2022-12-28', '0000-00-00', 'Belum Diambil');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_permohonankk`
 --
 
 CREATE TABLE `tb_permohonankk` (
@@ -92,7 +136,7 @@ CREATE TABLE `tb_permohonankk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_permohonankk`
+-- Dumping data untuk tabel `tb_permohonankk`
 --
 
 INSERT INTO `tb_permohonankk` (`no_permohonankk`, `nik`, `jenisPermohonan`, `tglPermohonan`, `nomor_kk`, `tgl_cetak`, `tgl_pengambilan`, `nama_pengambil`, `status`) VALUES
@@ -106,7 +150,7 @@ INSERT INTO `tb_permohonankk` (`no_permohonankk`, `nik`, `jenisPermohonan`, `tgl
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_permohonanktp`
+-- Struktur dari tabel `tb_permohonanktp`
 --
 
 CREATE TABLE `tb_permohonanktp` (
@@ -120,19 +164,20 @@ CREATE TABLE `tb_permohonanktp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_permohonanktp`
+-- Dumping data untuk tabel `tb_permohonanktp`
 --
 
 INSERT INTO `tb_permohonanktp` (`no_permohonanKtp`, `nik`, `jenisPermohonan`, `tgl_penyerahanBerkas`, `tglRekam`, `tgl_pengambilan`, `status`) VALUES
 ('P00003', '3210', 'Permohonan Baru', '2019-07-02', '2019-07-02', '2019-07-08', 'Sudah Diambil'),
 ('P00004', '3211', 'Cetak Ulang', '2019-07-10', '2019-07-10', '2019-08-06', 'Sudah Diambil'),
 ('P00005', '32888', 'Permohonan Baru', '2019-04-09', '2019-04-09', '0000-00-00', 'Belum Diambil'),
-('P00006', '32888', 'Pindah Datang', '2019-08-08', '2019-08-08', '0000-00-00', 'Belum Diambil');
+('P00006', '32888', 'Pindah Datang', '2019-08-08', '2019-08-08', '0000-00-00', 'Belum Diambil'),
+('P00008', '3222', 'Pindah Datang', '2022-12-15', '2022-12-15', '0000-00-00', 'Belum Diambil');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_sktmkesehatan`
+-- Struktur dari tabel `tb_sktmkesehatan`
 --
 
 CREATE TABLE `tb_sktmkesehatan` (
@@ -143,17 +188,16 @@ CREATE TABLE `tb_sktmkesehatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_sktmkesehatan`
+-- Dumping data untuk tabel `tb_sktmkesehatan`
 --
 
 INSERT INTO `tb_sktmkesehatan` (`no_sktmkesehatan`, `nik`, `nomor_kk`, `tgl`) VALUES
-('R00001', '3211', '32044444', '2018-05-02'),
-('R00002', '32888', '3425262727', '2019-02-26');
+('R00001', '3211', '32044444', '2018-05-02');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_sktmpendidikan`
+-- Struktur dari tabel `tb_sktmpendidikan`
 --
 
 CREATE TABLE `tb_sktmpendidikan` (
@@ -166,7 +210,7 @@ CREATE TABLE `tb_sktmpendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_sktmpendidikan`
+-- Dumping data untuk tabel `tb_sktmpendidikan`
 --
 
 INSERT INTO `tb_sktmpendidikan` (`no_sktmPendidikan`, `tgl_sktmPendidikan`, `nik`, `sekolah_tujuan`, `no_kk`, `keterangan`) VALUES
@@ -177,7 +221,7 @@ INSERT INTO `tb_sktmpendidikan` (`no_sktmPendidikan`, `tgl_sktmPendidikan`, `nik
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_staff`
+-- Struktur dari tabel `tb_staff`
 --
 
 CREATE TABLE `tb_staff` (
@@ -195,17 +239,18 @@ CREATE TABLE `tb_staff` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_staff`
+-- Dumping data untuk tabel `tb_staff`
 --
 
 INSERT INTO `tb_staff` (`id`, `nip`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `alamat`, `jabatan`, `no_tlp`, `foto`, `password`) VALUES
 (3, '002', 'Flora Punir', 'Perempuan', 'Bandung', '1972-02-16', 'Jl.Banteng No.22 Bandung', 'Bagian Pelayanan', '08756483934', 'staffEdit-002.jpeg', '979c8e8f8271e3431249f935cd7d3f4c'),
-(7, '009', 'Hendi Ramdhan', 'Laki-Laki', 'Bandung', '1976-05-14', 'Komplek Cibiru Asri No.90 Bandung', 'Kasi Pelayanan', '0892020202', 'staff-009.jpeg', '71ea803d7025a9ef0a399e2bc9d7867e');
+(7, '009', 'Hendi Ramdhan', 'Laki-Laki', 'Bandung', '1976-05-14', 'Komplek Cibiru Asri No.90 Bandung', 'Kasi Pelayanan', '0892020202', 'staff-009.jpeg', '71ea803d7025a9ef0a399e2bc9d7867e'),
+(8, '6333182', 'kjscns', 'Laki-Laki', 'askancksa', '2022-12-01', 'akascnoiasd', 'Kasi Pelayanan', '081995594452', 'staff-6333182.PNG', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_user`
+-- Struktur dari tabel `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -215,7 +260,7 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_user`
+-- Dumping data untuk tabel `tb_user`
 --
 
 INSERT INTO `tb_user` (`userID`, `nama`, `password`) VALUES
@@ -226,62 +271,74 @@ INSERT INTO `tb_user` (`userID`, `nama`, `password`) VALUES
 --
 
 --
--- Indexes for table `tb_penduduk`
+-- Indeks untuk tabel `tb_ketpindah`
+--
+ALTER TABLE `tb_ketpindah`
+  ADD PRIMARY KEY (`no_ket`);
+
+--
+-- Indeks untuk tabel `tb_penduduk`
 --
 ALTER TABLE `tb_penduduk`
   ADD PRIMARY KEY (`id_penduduk`);
 
 --
--- Indexes for table `tb_permohonankk`
+-- Indeks untuk tabel `tb_permohonankia`
+--
+ALTER TABLE `tb_permohonankia`
+  ADD PRIMARY KEY (`no_permohonanKia`);
+
+--
+-- Indeks untuk tabel `tb_permohonankk`
 --
 ALTER TABLE `tb_permohonankk`
   ADD PRIMARY KEY (`no_permohonankk`);
 
 --
--- Indexes for table `tb_permohonanktp`
+-- Indeks untuk tabel `tb_permohonanktp`
 --
 ALTER TABLE `tb_permohonanktp`
   ADD PRIMARY KEY (`no_permohonanKtp`);
 
 --
--- Indexes for table `tb_sktmkesehatan`
+-- Indeks untuk tabel `tb_sktmkesehatan`
 --
 ALTER TABLE `tb_sktmkesehatan`
   ADD PRIMARY KEY (`no_sktmkesehatan`);
 
 --
--- Indexes for table `tb_sktmpendidikan`
+-- Indeks untuk tabel `tb_sktmpendidikan`
 --
 ALTER TABLE `tb_sktmpendidikan`
   ADD PRIMARY KEY (`no_sktmPendidikan`);
 
 --
--- Indexes for table `tb_staff`
+-- Indeks untuk tabel `tb_staff`
 --
 ALTER TABLE `tb_staff`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_user`
+-- Indeks untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`userID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_penduduk`
+-- AUTO_INCREMENT untuk tabel `tb_penduduk`
 --
 ALTER TABLE `tb_penduduk`
-  MODIFY `id_penduduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_penduduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `tb_staff`
+-- AUTO_INCREMENT untuk tabel `tb_staff`
 --
 ALTER TABLE `tb_staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
