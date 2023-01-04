@@ -118,8 +118,6 @@ include"header.php";
   </div>
 </div>
 
-
-
         <?php
     }else if($_SESSION['level']=="Bagian Pelayanan"){
       ?>
@@ -197,32 +195,10 @@ include"header.php";
     </div>
   </div>
 </div>
-
- <div class="container">
-        <div class="row row-table">
-          <div class="col-md-5 col-table">
-          <div class="panel panel-info">
-            <div class="panel-heading" style="align:center;">
-            </div>
-            <div class="panel-body">
-
-              <div id="grafikJK"></div>
-
-         </div>
-       </div>
-     </div>
-
-    <div class="col-md-5 col-table">
-          <div class="panel panel-info">
-            <div class="panel-heading" style="align:center;">
-            </div>
-            <div class="panel-body">
-               <div id="grafikPen"></div>
-              <div></div>
-
          </div>
        </div>
       </div>
+      
     
 <?php
   
@@ -304,20 +280,6 @@ include"header.php";
     </div>
   </div>
 </div>
-
- <div class="container">
-        <div class="row row-table">
-          <div class="col-md-5 col-table">
-          <div class="panel panel-info">
-            <div class="panel-heading" style="align:center;">
-            </div>
-            <div class="panel-body">
-
-              <div id="grafikJK"></div>
-
-         </div>
-       </div>
-     </div>
 
     <div class="col-md-5 col-table">
           <div class="panel panel-info">
