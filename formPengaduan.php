@@ -12,11 +12,14 @@
     <!-- Add custom CSS here -->
     <link href="assets/css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+
      <!-- JavaScript -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.js"></script>
+
   </head>
 <body>
+
 <?php
 require_once('koneksi.php');
 
@@ -37,85 +40,32 @@ include"header.php";
   </div>
 </div>
 
-<div class="row">
-          <div class="col-lg-6">
+<form action="simpanPengaduan.php" method="POST">
+  
+<div class="form-group">
+    <label>Tanggal Pengaduan</label>
+    <input type="text" name="tgl_pengaduan" class="form-control" readonly value="<?= date('Y-m-d'); ?>">
+</div>
 
-            <form role="form">
+<div class="form-group">
+    <label>No Telpon</label>
+    <input type="text" name="no_telp" class="form-control">
+</div>
 
-              <div class="form-group">
-                <label>Masukan Nama Lengkap :</label>
-                <input class="form-control" placeholder="Isi dengan nama lengkap">
-              </div>
+<div class="form-group">
+    <label>Nama</label>
+    <input type="text" name="nama" class="form-control">
+</div>
 
-              <div class="form-group">
-                <label>Masukan No.Identitas :</label>
-                <input class="form-control" type="number" placeholder="Isikan dengan NIK">
-              </div>
+<div class="form-group">
+    <label>Pengaduan</label>
+    <textarea name="pengaduan" class="form-control" required></textarea>
+</div>
 
-              <div class="form-group">
-                <label>Masukan Tempat Lahir :</label>
-                <input class="form-control" placeholder="Isikan Tempat Lahir sesuai KTP">
-              </div>
+<div class="form-group">
+    <button type="submit" class="btn btn-success">SIMPAN</button>
+</div>
 
-              <div class="form-group">
-                <label>Tanggal Lahir :</label>
-                <input class="form-control" placeholder="Isikan Tgl Lahir sesuai KTP">
-              </div>
-
-              <div class="form-group">
-                <label>Masukan Alamat :</label>
-                <input class="form-control" placeholder="Isikan alamat sesuai KTP">
-              </div>
-
-              <div class="form-group">
-                <label>Masukan Kelurahan :</label>
-                <input class="form-control" placeholder="Isikan kelurahan sesuai KTP">
-              </div>
-
-              <div class="form-group">
-                <label>Masukan Pekerjaan :</label>
-                <input class="form-control" placeholder="Isikan Pekerjaan">
-              </div>
-
-              <div class="form-group">
-                <label>Masukan Status :</label>
-                <input class="form-control" placeholder="Isikan Status Perkawinan">
-              </div>
-
-              <div class="form-group">
-                <label>Masukan Agama :</label>
-                <input class="form-control" placeholder="Isikan Agama sesuai KTP">
-              </div>
-
-              <div class="form-group">
-              <label>Masukan No.Telp/Hp :</label>
-              <input class="form-control" type="number" placeholder="Isikan dengan no telp/hp">
-              </div>
-
-              <div class="form-group">
-              <label>Masukan Tanggal/Bulan/Tahun :</label>
-              <input class="form-control" type="date">
-              </div>
-
-              <div class="form-group">
-              <label>Pilih Jenis Kelamin :</label>
-              <div class="radio">
-                  <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Laki-laki
-                  </label>
-                </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Perempuan
-                </label>
-              </div>
-
-              <div class="form-group">
-                <label>Deskripsi Pengaduan</label>
-                <textarea class="form-control" rows="3" placeholder="Deskripsikan pengaduan"></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-default">Submit</button>
-              <button type="reset" class="btn btn-default">Reset</button>  
-            </form>
-          </div>
+<div class="form-group">
+    <a href="tampilData.php">Lihat Pengaduan</a>
+</div>
