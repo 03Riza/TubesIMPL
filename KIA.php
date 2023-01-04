@@ -60,7 +60,7 @@ include"header.php";
  <div class="row" id="contentJurusan">
                     <div class="col-lg-12">
                   <?php
-                    $q="SELECT max(no_permohonanKtp) as maxKode from tb_permohonanktp";   
+                    $q="SELECT max(no_permohonanKia) as maxKode from tb_permohonankia";   
                     $ha=mysqli_query($koneksi,$q);
                      $data=mysqli_fetch_array($ha);
 
@@ -84,7 +84,7 @@ include"header.php";
                 while($r=mysqli_fetch_array($da)){
                     
         ?>
-       <form  action="simpan_ektp.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
+       <form  action="simpan_kia.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
                   <div class="form-group form-group-sm">
                     <label class=" control-label col-sm-3" for="txtno" control-label">No Permohonan KIA</label>
                     <div class="col-sm-3">

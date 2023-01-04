@@ -78,7 +78,32 @@ require_once('koneksi.php');
               </ul>          
             </li>
               
-                    
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks"></span> Penilaian<b class="caret"></b></a>
+              <ul class="dropdown-menu"> 
+          <li><a href="ikm.php">Instalasi Kepuasan Masyarakat</a></li> 
+              </ul>          
+            </li>
+
+
+
+
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span> Laporan<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="formlaporan_penduduk.php"> Laporan Penduduk</a></li>
+                <li><a href="formlaporan_ktp.php"> Laporan Permohonan KTP</a></li>
+                <li><a href="formlaporan_kia.php"> Laporan Permohonan KIA</a></li>
+                <li><a href="formlaporan_kk.php"> Laporan Permohonan KK</a></li>
+                <li><a href="formlaporan_SktmPend.php"> Laporan SKTM Pendidkan</a></li>
+                <li><a href="formlaporan_SktmKes.php"> Laporan SKTM Kesehatan</a></li>
+                <li><a href="formlaporan_suratpindah.php"> Laporan Surat Pindah</a></li>
+                
+              </ul>          
+            </li>
+          </ul>
+           </ul>       
           
           </ul>
            </ul>
