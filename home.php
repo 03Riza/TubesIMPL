@@ -113,7 +113,7 @@ include"header.php";
   </div>
 </div>
           
-      <div id="page-wrapper">
+    <div id="page-wrapper">
       <div class="row" id="contentInput" >
         <div class="col-lg-12">
           <h1>Statistik Penduduk</small></h1>
@@ -123,6 +123,7 @@ include"header.php";
       <div class="panel-footer">
            <a href="statistikPen.php" class="btn" style="align:center; background-color:#00BFFF;" >Lihat Statistik Penduduk</a>
       </div>
+      
 
         <?php
     }else if($_SESSION['level']=="Bagian Pelayanan"){
@@ -200,7 +201,7 @@ include"header.php";
   </div>
 </div>
           
-      <div id="page-wrapper">
+    <div id="page-wrapper">
       <div class="row" id="contentInput" >
         <div class="col-lg-12">
           <h1>Statistik Penduduk</small></h1>
@@ -210,6 +211,7 @@ include"header.php";
       <div class="panel-footer">
            <a href="statistikPen.php" class="btn" style="align:center; background-color:#00BFFF;" >Lihat Statistik Penduduk</a>
       </div>
+      
     
 <?php
     }else if($_SESSION['level']=="Kasi Pelayanan"){
@@ -288,7 +290,7 @@ include"header.php";
   </div>
 </div>
           
-      <div id="page-wrapper">
+    <div id="page-wrapper">
       <div class="row" id="contentInput" >
         <div class="col-lg-12">
           <h1>Statistik Penduduk</small></h1>
@@ -298,7 +300,7 @@ include"header.php";
       <div class="panel-footer">
            <a href="statistikPen.php" class="btn" style="align:center; background-color:#00BFFF;" >Lihat Statistik Penduduk</a>
       </div>
-
+      
 
 
     
